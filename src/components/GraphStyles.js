@@ -55,10 +55,10 @@ const makeSvg = function(ele){
 
       <!-- status squares -->
       <g transform="translate(49, 68)">
-        <rect width="5" height="5" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
-        <rect width="5" height="5" x="7" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
-        <rect width="5" height="5" x="14" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
-        <rect width="5" height="5" x="21" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
+        <rect width="5" height="5" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#42ac89"></rect>
+        <rect width="5" height="5" x="7" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#42ac89"></rect>
+        <rect width="5" height="5" x="14" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#42ac89"></rect>
+        <rect width="5" height="5" x="21" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="transparent"></rect>
       </g>
 
       <!-- location label -->
