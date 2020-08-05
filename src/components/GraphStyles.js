@@ -133,7 +133,7 @@ export default [
       // "segment-weights": [0.250 , 0.75],
 
       // "curve-style": "unbundled-bezier",
-      // "control-point-distances": 120,
+      // "control-point-distances": 10,
       // "control-point-weights": 0.1,
 
       // "curve-style": "bezier",
