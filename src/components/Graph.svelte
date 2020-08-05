@@ -23,7 +23,7 @@
       cyInstance
         .makeLayout({
           name: 'dagre',
-          rankDir: 'TB',
+          rankDir: 'LR',
           nodeSep: 150
         })
         .run()
