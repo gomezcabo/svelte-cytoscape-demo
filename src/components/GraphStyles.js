@@ -26,7 +26,7 @@ const makeSvg = function(ele){
 
       <!-- badge top/left/2 -->
       <g transform="translate(2, 40)">
-        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#bc3e4a"></rect>
+        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#bc3e4a"/>
         <text x="15" y="8" alignment-baseline="middle" font-size="10" font-family="Arial, Helvetica, sans-serif" stroke-width="0" fill="#ffffff" text-anchor="middle">
           9
         </text>
@@ -34,7 +34,7 @@ const makeSvg = function(ele){
 
       <!-- badge top/right/1 -->
       <g transform="translate(89, 20)">
-        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#f7b45d"></rect>
+        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#f7b45d"/>
         <text x="15" y="8" alignment-baseline="middle" font-size="10" font-family="Arial, Helvetica, sans-serif" stroke-width="0" fill="#ffffff" text-anchor="middle">
           12
         </text>
@@ -42,19 +42,19 @@ const makeSvg = function(ele){
 
       <!-- badge top/right/2 -->
       <g transform="translate(89, 40)">
-        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#bc3e4a"></rect>
+        <rect width="30" height="15" rx="1" stroke="white" stroke-width="1" fill="#bc3e4a"/>
         <text x="15" y="8" alignment-baseline="middle" font-size="10" font-family="Arial, Helvetica, sans-serif" stroke-width="0" fill="#ffffff" text-anchor="middle">
           1
         </text>
       </g>
 
       <!-- icon -->
-      <g transform="translate(50, 38)">
+      <g transform="translate(50, 42)">
         ${iconPath}
       </g>
 
       <!-- status squares -->
-      <g transform="translate(49, 65)">
+      <g transform="translate(49, 68)">
         <rect width="5" height="5" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
         <rect width="5" height="5" x="7" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
         <rect width="5" height="5" x="14" rx="1" ry="1" stroke="white" stroke-width="0.5" fill="#bc3e4a"></rect>
@@ -73,7 +73,7 @@ const makeSvg = function(ele){
 
 export default [
   {
-    selector: 'node',
+    selector: 'node[label]',
     style: {
       'shape': 'rectangle',
       'background-image': function(ele){ return makeSvg(ele).svg; },
@@ -93,6 +93,16 @@ export default [
       // 'color': '#bc3e4a'
     }
   },
+  {
+    selector: '$node node',
+    style: {
+      'background-color': '#1e3249',
+      'background-opacity': 1,
+      'border-width': 2,
+      'padding': 30,
+      'border-color': 'gray'
+    }
+  },
   // {
   //   selector: 'node:selected',
   //   style: {
@@ -106,14 +116,37 @@ export default [
   {
     selector: 'edge',
     style: {
-      'curve-style': 'bezier',
+      // "curve-style": "unbundled-bezier",
+      // "control-point-distances": [40, -40],
+      // "control-point-weights": [0.250, 0.75],
+
+      "curve-style": "taxi",
+      "taxi-direction": "rightward",
+      "taxi-turn": 50,
+      "taxi-turn-min-distance": 0,
+      "source-endpoint": "inside-to-node",
+      "edge-distances": [0],
+
+
+      // "curve-style": "segments",
+      // "segment-distances": [ 40, -40 ],
+      // "segment-weights": [0.250 , 0.75],
+
+      // "curve-style": "unbundled-bezier",
+      // "control-point-distances": 120,
+      // "control-point-weights": 0.1,
+
+      // "curve-style": "bezier",
+      // "control-point-step-size": 40,
+
       'color': 'white',
       'text-background-color': '#ffffff',
       'text-background-opacity': '1',
       'text-background-padding': '3',
-      'width': '3',
-      'target-arrow-shape': 'triangle',
-      'line-color': 'white',
+      'width': 'data(capacity)',
+      // 'target-arrow-shape': 'triangle',
+      'line-color': 'data(color)',
+      'opacity': 0.6,
       'padding': '10',
       'target-arrow-color': 'white',
       'font-weight': 'bold'

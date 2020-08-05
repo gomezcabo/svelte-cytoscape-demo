@@ -24,7 +24,7 @@
         .makeLayout({
           name: 'dagre',
           rankDir: 'LR',
-          nodeSep: 150
+          nodeSep: 70
         })
         .run()
     })
